@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Prottush Islam — Frontend Developer & AI Automation Specialist from Bangladesh. Building modern web apps and AI tools."/>
+<meta name="keywords" content="Prottush Islam, Frontend Developer, React, JavaScript, AI Automation, Bangladesh"/>
+<meta property="og:title" content="Prottush Islam — Frontend Developer"/>
+<meta property="og:description" content="Building fast, scalable web applications and AI automation tools."/>
+<title>Prottush Islam — Frontend Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#04080f;
+  --accent:#00e5a0;
+  --accent2:#00b8ff;
+  --accent3:#a78bfa;
+  --text:#e8edf3;
+  --muted:#5a6a7e;
+  --border:rgba(255,255,255,0.07);
+  --glass:rgba(255,255,255,0.04);
+  --glass2:rgba(255,255,255,0.07);
+  --glass-border:rgba(255,255,255,0.1);
+  --font-d:'Syne',sans-serif;
+  --font-m:'Space Mono',monospace;
+  --r:12px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-m);overflow-x:hidden;line-height:1.6}
+
+/* BG ORBS */
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;opacity:0.18}
+.orb1{width:600px;height:600px;background:#00e5a0;top:-200px;left:-100px;animation:drift 18s ease-in-out infinite alternate}
+.orb2{width:500px;height:500px;background:#00b8ff;bottom:-150px;right:-100px;animation:drift 22s ease-in-out infinite alternate-reverse}
+.orb3{width:400px;height:400px;background:#a78bfa;top:40%;left:60%;animation:drift 15s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(40px,30px) scale(1.08)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0.9rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(4,8,15,0.75);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
+.nav-logo{font-family:var(--font-d);font-weight:800;font-size:1.2rem;color:var(--accent);letter-spacing:-0.02em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transition:transform 0.25s}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{padding:0.45rem 1.1rem;background:rgba(0,229,160,0.1);border:1px solid rgba(0,229,160,0.3);color:var(--accent)!important;border-radius:4px;transition:background 0.2s!important}
+.nav-cta:hover{background:rgba(0,229,160,0.2)!important}
+
+/* GLASS CARD */
+.glass{background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--r)}
+.glass2{background:var(--glass2);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.12);border-radius:var(--r)}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:9rem 2.5rem 4rem;position:relative;z-index:1}
+.hero-wrap{max-width:1100px;margin:0 auto;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.75rem;padding:0.35rem 1rem;background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.25);border-radius:40px}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,229,160,0.5)}50%{box-shadow:0 0 0 6px rgba(0,229,160,0)}}
+h1.hero-name{font-family:var(--font-d);font-size:clamp(3.5rem,9vw,7.5rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:1.25rem}
+h1.hero-name .line1{display:block;color:var(--text)}
+h1.hero-name .line2{display:block;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:0.85rem;color:var(--muted);letter-spacing:0.08em;margin-bottom:1.25rem}
+.hero-tagline{font-family:var(--font-d);font-size:clamp(1rem,2.2vw,1.35rem);color:rgba(232,237,243,0.75);max-width:580px;margin-bottom:2.5rem;line-height:1.55;font-weight:400}
+.hero-tagline strong{color:var(--accent2);font-weight:600}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn-g{display:inline-flex;align-items:center;gap:0.5rem;padding:0.78rem 1.8rem;font-family:var(--font-m);font-size:0.8rem;font-weight:700;text-decoration:none;letter-spacing:0.06em;border-radius:6px;transition:all 0.25s;cursor:pointer;border:none}
+.btn-g.primary{background:linear-gradient(135deg,var(--accent),#00c47c);color:#04080f}
+.btn-g.primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,229,160,0.3)}
+.btn-g.secondary{background:var(--glass);border:1px solid var(--glass-border);color:var(--text);backdrop-filter:blur(10px)}
+.btn-g.secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:0;flex-wrap:wrap}
+.stat-box{padding:1.25rem 2rem;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:0.2rem}
+.stat-box:last-child{border-right:none}
+.stat-n{font-family:var(--font-d);font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-size:0.68rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase}
+
+/* SECTION */
+section{padding:6rem 2.5rem;position:relative;z-index:1}
+.s-inner{max-width:1100px;margin:0 auto}
+.s-label{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.s-label span{opacity:0.5}
+.s-title{font-family:var(--font-d);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin-bottom:3rem}
+.s-title em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ABOUT */
+#about{background:rgba(0,0,0,0.2)}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:3.5rem;align-items:start}
+.about-body p{font-size:0.875rem;color:rgba(232,237,243,0.7);line-height:1.85;margin-bottom:1.1rem}
+.about-body p strong{color:var(--accent);font-weight:700}
+.about-body p b{color:var(--accent2)}
+.impact-pill{display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 1rem;background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.2);border-radius:40px;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem}
+.about-cards{display:flex;flex-direction:column;gap:1rem}
+.a-card{padding:1.25rem 1.5rem;border-left:2px solid var(--accent)}
+.a-card.blue{border-left-color:var(--accent2)}
+.a-card.purple{border-left-color:var(--accent3)}
+.a-card h4{font-family:var(--font-d);font-size:0.9rem;font-weight:700;margin-bottom:0.35rem;display:flex;align-items:center;gap:0.5rem}
+.a-card p{font-size:0.78rem;color:var(--muted);line-height:1.65}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.sk-card{padding:1.4rem 1.6rem;transition:transform 0.2s,border-color 0.2s}
+.sk-card:hover{transform:translateY(-3px);border-color:rgba(0,229,160,0.3)}
+.sk-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem}
+.sk-name{font-family:var(--font-d);font-size:0.92rem;font-weight:700;display:flex;align-items:center;gap:0.5rem}
+.sk-pct{font-size:0.8rem;color:var(--accent);font-weight:700;font-family:var(--font-m)}
+.sk-bar{height:2px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;margin-bottom:0.5rem}
+.sk-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width 1.4s cubic-bezier(0.16,1,0.3,1)}
+.sk-sub{font-size:0.67rem;color:var(--muted);letter-spacing:0.06em}
+
+/* PROJECTS */
+#projects{background:rgba(0,0,0,0.2)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem}
+.p-card{padding:1.75rem;position:relative;overflow:hidden;transition:transform 0.25s,border-color 0.25s;cursor:default}
+.p-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity 0.3s}
+.p-card:hover{transform:translateY(-4px);border-color:rgba(0,229,160,0.25)}
+.p-card:hover::before{opacity:1}
+.p-num{font-size:0.65rem;color:var(--muted);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.8rem;display:flex;align-items:center;justify-content:space-between}
+.p-badge{font-size:0.6rem;padding:0.15rem 0.55rem;border-radius:20px;font-weight:700}
+.p-badge.featured{background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.3)}
+.p-badge.wip{background:rgba(167,139,250,0.1);color:var(--accent3);border:1px solid rgba(167,139,250,0.3)}
+.p-name{font-family:var(--font-d);font-size:1.15rem;font-weight:800;margin-bottom:0.6rem;line-height:1.2}
+.p-desc{font-size:0.8rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
+.p-techs{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:1.25rem}
+.tech{font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(0,184,255,0.06);border:1px solid rgba(0,184,255,0.2);color:var(--accent2);border-radius:3px;letter-spacing:0.06em}
+.p-links{display:flex;gap:1rem}
+.p-link{font-size:0.72rem;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:0.3rem;transition:color 0.2s;letter-spacing:0.05em}
+.p-link:hover{color:var(--accent)}
+
+/* EXPERIENCE */
+.exp-wrap{position:relative;padding-left:2rem}
+.exp-wrap::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--accent),var(--accent2),transparent)}
+.exp-item{position:relative;padding-bottom:3rem}
+.exp-dot{position:absolute;left:-2.35rem;top:0.25rem;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(0,229,160,0.15),0 0 16px var(--accent)}
+.exp-date{font-size:0.68rem;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.4rem}
+.exp-role{font-family:var(--font-d);font-size:1.2rem;font-weight:800;margin-bottom:0.2rem}
+.exp-org{font-size:0.8rem;color:var(--accent2);margin-bottom:0.75rem;letter-spacing:0.04em}
+.exp-desc{font-size:0.82rem;color:var(--muted);line-height:1.8;max-width:680px}
+.exp-chips{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.8rem}
+.chip{font-size:0.65rem;padding:0.2rem 0.6rem;border:1px solid var(--border);color:var(--muted);border-radius:3px}
+
+/* BLOG */
+#blog{background:rgba(0,0,0,0.2)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.b-card{padding:1.6rem;transition:transform 0.2s,border-color 0.2s}
+.b-card:hover{transform:translateY(-3px);border-color:rgba(0,184,255,0.3)}
+.b-cat{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.75rem}
+.b-title{font-family:var(--font-d);font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:0.65rem}
+.b-excerpt{font-size:0.77rem;color:var(--muted);line-height:1.72;margin-bottom:1rem}
+.b-foot{display:flex;justify-content:space-between;align-items:center}
+.b-coming{font-size:0.65rem;color:var(--muted);padding:0.2rem 0.6rem;border:1px dashed var(--border);border-radius:3px}
+.b-arrow{font-size:0.72rem;color:var(--accent);opacity:0.5}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
+.contact-head{font-family:var(--font-d);font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin-bottom:1rem}
+.contact-head em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.contact-sub{font-size:0.83rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;max-width:380px}
+.c-links{display:flex;flex-direction:column;gap:0.75rem}
+.c-link{display:flex;align-items:center;gap:1rem;padding:0.9rem 1.1rem;text-decoration:none;color:var(--text);transition:border-color 0.2s,transform 0.2s}
+.c-link:hover{border-color:rgba(0,229,160,0.4);transform:translateX(4px)}
+.c-icon{width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.2);border-radius:8px;font-size:1rem;flex-shrink:0}
+.c-info{display:flex;flex-direction:column;gap:0.1rem}
+.c-label{font-size:0.62rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase}
+.c-val{font-size:0.82rem;color:var(--accent)}
+
+/* FORM */
+.contact-form{padding:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+.fg input,.fg textarea,.fg select{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:var(--text);font-family:var(--font-m);font-size:0.82rem;padding:0.7rem 0.9rem;border-radius:6px;outline:none;transition:border-color 0.2s,background 0.2s;-webkit-appearance:none}
+.fg input:focus,.fg textarea:focus{border-color:var(--accent);background:rgba(0,229,160,0.04)}
+.fg textarea{height:110px;resize:none}
+.form-submit{width:100%;padding:0.85rem;background:linear-gradient(135deg,var(--accent),#00c47c);border:none;color:#04080f;font-family:var(--font-m);font-size:0.82rem;font-weight:700;letter-spacing:0.08em;border-radius:6px;cursor:pointer;transition:opacity 0.2s,transform 0.2s;margin-top:0.5rem}
+.form-submit:hover:not(:disabled){opacity:0.9;transform:translateY(-1px)}
+.form-submit:disabled{opacity:0.6;cursor:not-allowed}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;padding:1rem 1.5rem;border-radius:8px;font-size:0.82rem;z-index:9999;transform:translateY(100px);opacity:0;transition:all 0.35s cubic-bezier(0.16,1,0.3,1);backdrop-filter:blur(16px);max-width:360px}
+.toast.success{background:rgba(0,229,160,0.15);border:1px solid rgba(0,229,160,0.4);color:var(--accent)}
+.toast.error{background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.4);color:#f87171}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* FOOTER */
+footer{background:rgba(0,0,0,0.4);border-top:1px solid var(--border);padding:2rem 2.5rem;position:relative;z-index:1}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-copy{font-size:0.72rem;color:var(--muted)}
+.footer-copy span{color:var(--accent)}
+.footer-stack{font-size:0.65rem;color:var(--muted);letter-spacing:0.08em}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column}
+  .stat-box{border-right:none;border-bottom:1px solid var(--border);padding:0.85rem 0}
+}
+@media(max-width:600px){
+  nav{padding:0.75rem 1rem}
+  .nav-links li:nth-child(n+5){display:none}
+  section{padding:4rem 1.25rem}
+  .hero-btns{flex-direction:column}
+  .btn-g{justify-content:center}
+}
+/* SCROLLBAR */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+/* CURSOR */
+@media(hover:hover){
+  *{cursor:none}
+  .cursor{position:fixed;z-index:99999;pointer-events:none;mix-blend-mode:difference}
+  .cursor-dot{width:6px;height:6px;background:#fff;border-radius:50%;transform:translate(-50%,-50%);transition:transform 0.1s}
+  .cursor-ring{width:36px;height:36px;border:1px solid rgba(255,255,255,0.5);border-radius:50%;transform:translate(-50%,-50%);transition:all 0.12s ease}
+  .cursor-ring.hover{width:52px;height:52px;border-color:var(--accent);background:rgba(0,229,160,0.08)}
+}
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor-dot" style="position:fixed;top:0;left:0"><div class="cursor-dot"></div></div>
+<div class="cursor" id="cursor-ring" style="position:fixed;top:0;left:0"><div class="cursor-ring" id="cr"></div></div>
+
+<!-- BG Orbs -->
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<!-- Toast -->
+<div class="toast glass" id="toast"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">PI.dev</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-wrap">
+    <div class="hero-eyebrow"><span class="hero-dot"></span> Available for opportunities</div>
+    <h1 class="hero-name">
+      <span class="line1">Prottush</span>
+      <span class="line2">Islam</span>
+    </h1>
+    <p class="hero-sub">// Frontend Developer &amp; AI Automation Specialist · Bangladesh</p>
+    <p class="hero-tagline">Building <strong>fast, scalable</strong> web applications and AI automation tools that make a real impact — for users and for the world.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-g primary">→ View Projects</a>
+      <a href="#contact" class="btn-g secondary">✉ Let's Talk</a>
+      <a href="https://github.com/prottushislam" target="_blank" class="btn-g secondary">⌥ GitHub</a>
+    </div>
+    <div class="glass" style="display:inline-flex;border-radius:12px;overflow:hidden">
+      <div class="stat-box"><span class="stat-n">3+</span><span class="stat-l">Years Coding</span></div>
+      <div class="stat-box"><span class="stat-n">8</span><span class="stat-l">Technologies</span></div>
+      <div class="stat-box"><span class="stat-n">2021</span><span class="stat-l">Social Impact</span></div>
+      <div class="stat-box"><span class="stat-n">∞</span><span class="stat-l">Drive to Build</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="s-inner">
+    <div class="s-label"><span>01</span> — About</div>
+    <div class="about-grid reveal">
+      <div class="about-body">
+        <h2 class="s-title">Who I <em>Am</em></h2>
+        <div class="impact-pill">🌱 Student · Developer · Changemaker</div>
+        <p>I'm <strong>Prottush Islam</strong>, a university student at the University of the People and a self-driven developer from Bangladesh. I started coding out of curiosity — and it quickly became my superpower for solving real problems.</p>
+        <p>My stack spans <strong>React, JavaScript, Python, HTML,</strong> and <strong>CSS</strong>. I build web applications that are fast, minimal, and purposeful — from client projects to personal tools that automate workflows with <b>AI</b>.</p>
+        <p>Beyond code, I'm passionate about <strong>social impact</strong>. Since 2021, I've been working alongside Amar Online School to champion child rights and digital education for underserved communities across Bangladesh.</p>
+        <p>My mission is simple: use technology not just to build products, but to <strong>build a better world</strong> — one line of code, one child, at a time.</p>
+      </div>
+      <div class="about-cards">
+        <div class="glass a-card">
+          <h4>🎓 My Journey</h4>
+          <p>Started with HTML &amp; CSS, moved through JavaScript and React, now deep into AI automation and fullstack systems. Every project teaches me something new.</p>
+        </div>
+        <div class="glass a-card blue">
+          <h4>🚀 My Mission</h4>
+          <p>Create digital products that are not only performant and beautiful, but genuinely useful — tools that solve real problems for real people.</p>
+        </div>
+        <div class="glass a-card">
+          <h4>❤️ Child Rights &amp; Social Impact</h4>
+          <p>Since 2021, working with Amar Online School (AOS), advocating for children's rights and expanding access to digital education across Bangladesh.</p>
+        </div>
+        <div class="glass a-card purple">
+          <h4>📍 University of the People</h4>
+          <p>Pursuing Computer Science while building real-world products that bridge education and technology.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SKILLS ═══ -->
+<section id="skills">
+  <div class="s-inner">
+    <div class="s-label"><span>02</span> — Skills</div>
+    <h2 class="s-title">Tech <em>Arsenal</em></h2>
+    <div class="skills-grid reveal">
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">⚛️ React</span><span class="sk-pct">88%</span></div><div class="sk-bar"><div class="sk-fill" data-w="88"></div></div><div class="sk-sub">Hooks · State Management · Component Architecture</div></div>
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">🟡 JavaScript</span><span class="sk-pct">85%</span></div><div class="sk-bar"><div class="sk-fill" data-w="85"></div></div><div class="sk-sub">ES6+ · Async/Await · DOM · APIs</div></div>
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">🐍 Python</span><span class="sk-pct">75%</span></div><div class="sk-bar"><div class="sk-fill" data-w="75"></div></div><div class="sk-sub">Scripting · Automation · FastAPI · Web Scraping</div></div>
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">🌐 HTML &amp; CSS</span><span class="sk-pct">95%</span></div><div class="sk-bar"><div class="sk-fill" data-w="95"></div></div><div class="sk-sub">Semantic · Flexbox · Grid · Responsive Design</div></div>
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">🤖 AI Automation</span><span class="sk-pct">78%</span></div><div class="sk-bar"><div class="sk-fill" data-w="78"></div></div><div class="sk-sub">LLM Integration · GPT APIs · Workflow Automation</div></div>
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">▲ Next.js</span><span class="sk-pct">72%</span></div><div class="sk-bar"><div class="sk-fill" data-w="72"></div></div><div class="sk-sub">SSR · SSG · App Router · API Routes</div></div>
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">🎨 Branding</span><span class="sk-pct">80%</span></div><div class="sk-bar"><div class="sk-fill" data-w="80"></div></div><div class="sk-sub">Visual Identity · Typography · Design Systems</div></div>
+      <div class="glass2 sk-card"><div class="sk-top"><span class="sk-name">🐙 Git &amp; GitHub</span><span class="sk-pct">82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82"></div></div><div class="sk-sub">Version Control · Branching · Open Source</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <div class="s-inner">
+    <div class="s-label"><span>03</span> — Projects</div>
+    <h2 class="s-title">Selected <em>Work</em></h2>
+    <div class="proj-grid reveal">
+      <div class="glass p-card"><div class="p-num">01<span class="p-badge featured">Featured</span></div><div class="p-name">AI Content Studio</div><p class="p-desc">Full-stack AI automation platform generating SEO-optimized content via GPT APIs. Includes bulk generation, tone control, and multi-format export.</p><div class="p-techs"><span class="tech">React</span><span class="tech">Python</span><span class="tech">OpenAI API</span><span class="tech">FastAPI</span></div><div class="p-links"><a href="#" class="p-link">⌥ GitHub</a><a href="#" class="p-link">↗ Live Demo</a></div></div>
+      <div class="glass p-card"><div class="p-num">02</div><div class="p-name">DevPortfolio Builder</div><p class="p-desc">No-code portfolio generator for developers. Fill in your details, get a deployable Next.js site. Fully theme-customizable with instant preview.</p><div class="p-techs"><span class="tech">Next.js</span><span class="tech">Tailwind CSS</span><span class="tech">Vercel</span></div><div class="p-links"><a href="#" class="p-link">⌥ GitHub</a><a href="#" class="p-link">↗ Live Demo</a></div></div>
+      <div class="glass p-card"><div class="p-num">03</div><div class="p-name">AOS Digital Platform</div><p class="p-desc">Learning management system for Amar Online School — delivering digital education to underprivileged children across Bangladesh.</p><div class="p-techs"><span class="tech">React</span><span class="tech">JavaScript</span><span class="tech">CSS Modules</span></div><div class="p-links"><a href="#" class="p-link">⌥ GitHub</a><a href="#" class="p-link">↗ Live Demo</a></div></div>
+      <div class="glass p-card"><div class="p-num">04</div><div class="p-name">Python Scraper Pro</div><p class="p-desc">Intelligent web scraper with scheduling, proxy rotation, and CSV/JSON export. Built for e-commerce price tracking and research workflows.</p><div class="p-techs"><span class="tech">Python</span><span class="tech">BeautifulSoup</span><span class="tech">Selenium</span></div><div class="p-links"><a href="#" class="p-link">⌥ GitHub</a><a href="#" class="p-link">↗ Live Demo</a></div></div>
+      <div class="glass p-card"><div class="p-num">05</div><div class="p-name">Brand Identity Toolkit</div><p class="p-desc">Design system and brand kit generator. Input your colors, get a complete CSS variable set, component library, and style guide instantly.</p><div class="p-techs"><span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Vanilla JS</span></div><div class="p-links"><a href="#" class="p-link">⌥ GitHub</a><a href="#" class="p-link">↗ Live Demo</a></div></div>
+      <div class="glass p-card"><div class="p-num">06<span class="p-badge wip">In Progress</span></div><div class="p-name">LearnFlow AI</div><p class="p-desc">Adaptive learning assistant that creates personalized study plans, quizzes, and progress tracking for students — powered by AI.</p><div class="p-techs"><span class="tech">Next.js</span><span class="tech">Python</span><span class="tech">AI APIs</span><span class="tech">Supabase</span></div><div class="p-links"><a href="#" class="p-link">⌥ GitHub</a><span style="font-size:0.7rem;color:var(--muted)">🔧 Building...</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience">
+  <div class="s-inner">
+    <div class="s-label"><span>04</span> — Experience</div>
+    <h2 class="s-title">Where I've <em>Worked</em></h2>
+    <div class="exp-wrap reveal">
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-date">2021 — Present</div>
+        <div class="exp-role">Child Rights &amp; Digital Education Advocate</div>
+        <div class="exp-org">Amar Online School (AOS) · Bangladesh</div>
+        <p class="exp-desc">Working at the intersection of technology and social impact. Contributing to digital education initiatives that bring quality learning to underserved children across Bangladesh. Building and maintaining the school's digital presence, creating educational content, and advocating for child rights in the digital era.</p>
+        <div class="exp-chips"><span class="chip">Child Rights</span><span class="chip">Digital Education</span><span class="chip">Community Impact</span><span class="chip">Web Development</span><span class="chip">NGO Collaboration</span></div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-dot" style="background:var(--accent2);box-shadow:0 0 0 4px rgba(0,184,255,0.15),0 0 16px var(--accent2)"></div>
+        <div class="exp-date" style="color:var(--accent2)">2022 — Present</div>
+        <div class="exp-role">Freelance Frontend Developer</div>
+        <div class="exp-org">Independent · Remote</div>
+        <p class="exp-desc">Building websites and web applications for clients across various industries. Specializing in React-based SPAs, landing pages, and AI-powered tools. Delivering clean, performant code with exceptional UX and modern design standards.</p>
+        <div class="exp-chips"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Client Projects</span><span class="chip">AI Tools</span></div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-dot" style="background:var(--accent3);box-shadow:0 0 0 4px rgba(167,139,250,0.15),0 0 16px var(--accent3)"></div>
+        <div class="exp-date" style="color:var(--accent3)">2023 — Present</div>
+        <div class="exp-role">Computer Science Student</div>
+        <div class="exp-org">University of the People · Online</div>
+        <p class="exp-desc">Pursuing Computer Science at UoPeople — studying algorithms, data structures, software engineering, and systems design while applying learnings through real-world projects and open source contributions.</p>
+        <div class="exp-chips"><span class="chip">Computer Science</span><span class="chip">Algorithms</span><span class="chip">Software Engineering</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BLOG ═══ -->
+<section id="blog">
+  <div class="s-inner">
+    <div class="s-label"><span>05</span> — Blog</div>
+    <h2 class="s-title">Thoughts &amp; <em>Writing</em></h2>
+    <div class="blog-grid reveal">
+      <div class="glass b-card"><div class="b-cat">Web Development</div><div class="b-title">Why I Chose React Over Vue — And What I Learned</div><p class="b-excerpt">A developer's honest take on the React vs Vue debate, from hands-on experience building real projects in both frameworks...</p><div class="b-foot"><span class="b-coming">✍ Draft</span><span class="b-arrow">→</span></div></div>
+      <div class="glass b-card"><div class="b-cat">AI Automation</div><div class="b-title">How I Automated 80% of My Workflow with Python &amp; GPT</div><p class="b-excerpt">From content generation to data processing — the exact stack and mindset that helped me reclaim hours of work each week...</p><div class="b-foot"><span class="b-coming">✍ Draft</span><span class="b-arrow">→</span></div></div>
+      <div class="glass b-card"><div class="b-cat">Technology &amp; Learning</div><div class="b-title">Learning to Code in Bangladesh: What Actually Worked</div><p class="b-excerpt">An honest account of self-teaching programming from scratch — the YouTube rabbit holes, the dead ends, and the breakthroughs...</p><div class="b-foot"><span class="b-coming">✍ Draft</span><span class="b-arrow">→</span></div></div>
+      <div class="glass b-card"><div class="b-cat">Social Impact</div><div class="b-title">Tech for Good: Building EdTech for Children Taught Me This</div><p class="b-excerpt">Reflections on building digital tools for social impact — where user empathy meets engineering, and why purpose matters...</p><div class="b-foot"><span class="b-coming">✍ Draft</span><span class="b-arrow">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="s-inner">
+    <div class="s-label"><span>06</span> — Contact</div>
+    <div class="contact-grid reveal">
+      <div class="contact-left">
+        <h2 class="contact-head">Let's Build<br/><em>Something</em><br/>Together.</h2>
+        <p class="contact-sub">Whether you have a project in mind, want to collaborate, or just want to say hello — my inbox is always open. I typically reply within 24–48 hours.</p>
+        <div class="c-links">
+          <a href="mailto:prottushislam17@gmail.com" class="glass c-link">
+            <div class="c-icon">✉</div>
+            <div class="c-info"><span class="c-label">Email</span><span class="c-val">prottushislam17@gmail.com</span></div>
+          </a>
+          <a href="https://www.prottushislam17.com" target="_blank" class="glass c-link">
+            <div class="c-icon">🌐</div>
+            <div class="c-info"><span class="c-label">Website</span><span class="c-val">www.prottushislam17.com</span></div>
+          </a>
+          <a href="https://github.com/prottushislam" target="_blank" class="glass c-link">
+            <div class="c-icon">⌥</div>
+            <div class="c-info"><span class="c-label">GitHub</span><span class="c-val">github.com/prottushislam</span></div>
+          </a>
+          <a href="https://linkedin.com/in/prottushislam" target="_blank" class="glass c-link">
+            <div class="c-icon" style="color:var(--accent2)">in</div>
+            <div class="c-info"><span class="c-label">LinkedIn</span><span class="c-val">linkedin.com/in/prottushislam</span></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM — connected to backend -->
+      <div class="glass2 contact-form">
+        <div class="form-row">
+          <div class="fg"><label>Your Name</label><input type="text" id="f-name" placeholder="John Doe" autocomplete="name"/></div>
+          <div class="fg"><label>Email Address</label><input type="email" id="f-email" placeholder="john@example.com" autocomplete="email"/></div>
+        </div>
+        <div class="fg"><label>Subject</label><input type="text" id="f-subject" placeholder="Project Collaboration / Just saying hi"/></div>
+        <div class="fg"><label>Message</label><textarea id="f-msg" placeholder="Tell me about your project or idea..."></textarea></div>
+        <button class="form-submit" id="f-submit" onclick="handleSubmit()">→ Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">Built with <span>❤</span> by <span>Prottush Islam</span> · Bangladesh · <span>2025</span></p>
+    <p class="footer-stack">React · Next.js · Node.js · Express · Tailwind CSS</p>
+  </div>
+</footer>
+
+<script>
+// ── Backend URL — update this when you deploy ──────────────
+const API_URL = 'http://localhost:5000/api/contact';
+
+// ── Cursor ──────────────────────────────────────────────────
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+const cr = document.getElementById('cr');
+if(dot && ring){
+  document.addEventListener('mousemove', e=>{
+    dot.style.left = e.clientX+'px'; dot.style.top = e.clientY+'px';
+    ring.style.left = e.clientX+'px'; ring.style.top = e.clientY+'px';
+  });
+  document.querySelectorAll('a,button,.p-card,.sk-card').forEach(el=>{
+    el.addEventListener('mouseenter',()=>cr.classList.add('hover'));
+    el.addEventListener('mouseleave',()=>cr.classList.remove('hover'));
+  });
+}
+
+// ── Scroll reveal ───────────────────────────────────────────
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)} });
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(r=>io.observe(r));
+
+// ── Skill bars ──────────────────────────────────────────────
+const so = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';so.unobserve(e.target)} });
+},{threshold:0.3});
+document.querySelectorAll('.sk-fill').forEach(f=>{f.style.width='0%';so.observe(f)});
+
+// ── Active nav link on scroll ───────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const sco = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      navLinks.forEach(l=>l.style.color='');
+      const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if(active) active.style.color='var(--accent)';
+    }
+  });
+},{threshold:0.4});
+sections.forEach(s=>sco.observe(s));
+
+// ── Toast helper ────────────────────────────────────────────
+function showToast(msg, type='success'){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast glass ${type} show`;
+  setTimeout(()=>t.classList.remove('show'),4500);
+}
+
+// ── Contact form handler ────────────────────────────────────
+async function handleSubmit(){
+  const name    = document.getElementById('f-name').value.trim();
+  const email   = document.getElementById('f-email').value.trim();
+  const subject = document.getElementById('f-subject').value.trim();
+  const msg     = document.getElementById('f-msg').value.trim();
+  const btn     = document.getElementById('f-submit');
+
+  // Basic client-side validation
+  if(!name || !email || !subject || !msg){
+    showToast('⚠️ Please fill in all fields.', 'error'); return;
+  }
+  const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRx.test(email)){
+    showToast('⚠️ Please enter a valid email.', 'error'); return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Sending...';
+
+  try {
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({name, email, subject, message:msg})
+    });
+    const data = await res.json();
+
+    if(data.success){
+      showToast(`✅ ${data.message}`, 'success');
+      document.getElementById('f-name').value = '';
+      document.getElementById('f-email').value = '';
+      document.getElementById('f-subject').value = '';
+      document.getElementById('f-msg').value = '';
+      btn.textContent = '✓ Message Sent!';
+      btn.style.background = 'linear-gradient(135deg,#00b8ff,#0090cc)';
+      setTimeout(()=>{
+        btn.textContent = '→ Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    } else {
+      const errMsg = data.errors ? data.errors.map(e=>e.msg).join(', ') : data.message;
+      showToast('❌ ' + errMsg, 'error');
+      btn.textContent = '→ Send Message';
+      btn.disabled = false;
+    }
+  } catch(err) {
+    // Backend not running? Show helpful message
+    showToast('⚠️ Backend not connected. Email me directly: prottushislam17@gmail.com', 'error');
+    btn.textContent = '→ Send Message';
+    btn.disabled = false;
+  }
+}
+</script>
+</body>
+</html>
