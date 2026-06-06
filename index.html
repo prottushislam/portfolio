@@ -6,7 +6,7 @@
   <title>Prottush Islam — Portfolio</title>
   <link rel="preconnect" href="https://fonts.bunny.net" />
   <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800|ibm-plex-mono:300,400,500,600,700|space-grotesk:300,400,500,600,700&display=swap" rel="stylesheet" />
-   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='1em' font-size='90'>🌐</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -61,30 +61,22 @@
     .bg-wrap {
       position: fixed; inset: 0; z-index: 0; overflow: hidden;
       background:
-        radial-gradient(ellipse 90% 55% at 50% -5%, rgba(60,10,100,.95) 0%, rgba(20,5,40,.5) 45%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(10,30,80,.6) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(80,20,130,.85) 0%, rgba(25,5,50,.6) 40%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 10% 70%, rgba(120,40,10,.25) 0%, transparent 55%),
         var(--bg);
     }
     .bg-wrap::before {
       content: '';
       position: absolute; inset: 0;
       background-image:
-        radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 32% 68%, rgba(255,255,255,.35) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 47% 11%, rgba(255,255,255,.45) 0%, transparent 100%),
-        radial-gradient(1px 1px at 61% 58%, rgba(255,255,255,.30) 0%, transparent 100%),
-        radial-gradient(1px 1px at 73% 35%, rgba(255,255,255,.45) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 86% 79%, rgba(255,255,255,.40) 0%, transparent 100%),
-        radial-gradient(1px 1px at 9% 48%, rgba(255,255,255,.28) 0%, transparent 100%),
-        radial-gradient(1px 1px at 93% 17%, rgba(255,255,255,.42) 0%, transparent 100%),
-        radial-gradient(1px 1px at 40% 90%, rgba(255,255,255,.30) 0%, transparent 100%),
-        radial-gradient(1px 1px at 67% 70%, rgba(255,255,255,.36) 0%, transparent 100%),
-        radial-gradient(1px 1px at 21% 40%, rgba(255,255,255,.25) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 79% 54%, rgba(255,255,255,.48) 0%, transparent 100%),
-        radial-gradient(1px 1px at 54% 30%, rgba(255,255,255,.32) 0%, transparent 100%),
-        radial-gradient(1px 1px at 97% 63%, rgba(255,255,255,.38) 0%, transparent 100%),
-        radial-gradient(1px 1px at 36% 47%, rgba(255,255,255,.27) 0%, transparent 100%);
-      animation: twinkle 9s ease-in-out infinite alternate;
+        radial-gradient(1px 1px at 15% 22%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 47% 11%, rgba(255,255,255,.35) 0%, transparent 100%),
+        radial-gradient(1px 1px at 73% 35%, rgba(255,255,255,.38) 0%, transparent 100%),
+        radial-gradient(1px 1px at 86% 79%, rgba(255,255,255,.30) 0%, transparent 100%),
+        radial-gradient(1px 1px at 32% 68%, rgba(255,255,255,.28) 0%, transparent 100%),
+        radial-gradient(1px 1px at 9% 48%, rgba(255,255,255,.22) 0%, transparent 100%),
+        radial-gradient(1px 1px at 93% 17%, rgba(255,255,255,.32) 0%, transparent 100%);
+      animation: twinkle 10s ease-in-out infinite alternate;
     }
     @keyframes twinkle {
       0%   { opacity:.5 }
@@ -96,18 +88,18 @@
       position: absolute; border-radius: 50%;
       filter: blur(90px); mix-blend-mode: screen; pointer-events: none;
     }
-    .orb-1 { width:700px;height:500px;top:-12%;left:-18%;
-      background: radial-gradient(ellipse,rgba(255,120,0,.28) 0%,rgba(200,40,0,.10) 50%,transparent 72%);
-      animation: drift1 20s ease-in-out infinite alternate; }
-    .orb-2 { width:600px;height:700px;top:18%;right:-22%;
-      background: radial-gradient(ellipse,rgba(79,156,249,.22) 0%,rgba(20,70,200,.08) 50%,transparent 72%);
-      animation: drift2 24s ease-in-out infinite alternate; }
-    .orb-3 { width:520px;height:520px;bottom:-5%;left:22%;
-      background: radial-gradient(ellipse,rgba(155,93,229,.20) 0%,rgba(80,10,200,.07) 50%,transparent 72%);
-      animation: drift3 17s ease-in-out infinite alternate; }
-    .orb-4 { width:420px;height:420px;top:48%;left:38%;
-      background: radial-gradient(ellipse,rgba(34,211,165,.15) 0%,rgba(0,160,110,.05) 50%,transparent 72%);
-      animation: drift4 28s ease-in-out infinite alternate; }
+    .orb-1 { width:600px;height:400px;top:-8%;left:-10%;
+      background: radial-gradient(ellipse,rgba(200,80,0,.18) 0%,rgba(150,30,0,.07) 50%,transparent 72%);
+      animation: drift1 22s ease-in-out infinite alternate; }
+    .orb-2 { width:500px;height:600px;top:15%;right:-18%;
+      background: radial-gradient(ellipse,rgba(60,120,220,.16) 0%,rgba(20,60,180,.06) 50%,transparent 72%);
+      animation: drift2 26s ease-in-out infinite alternate; }
+    .orb-3 { width:450px;height:450px;bottom:-8%;left:18%;
+      background: radial-gradient(ellipse,rgba(120,60,200,.13) 0%,rgba(70,10,180,.05) 50%,transparent 72%);
+      animation: drift3 19s ease-in-out infinite alternate; }
+    .orb-4 { width:350px;height:350px;top:45%;left:35%;
+      background: radial-gradient(ellipse,rgba(20,180,130,.08) 0%,rgba(0,130,90,.03) 50%,transparent 72%);
+      animation: drift4 30s ease-in-out infinite alternate; }
     @keyframes drift1 { from{transform:translate(0,0) scale(1)} to{transform:translate(110px,90px) scale(1.18)} }
     @keyframes drift2 { from{transform:translate(0,0) scale(1.1)} to{transform:translate(-95px,110px) scale(.88)} }
     @keyframes drift3 { from{transform:translate(0,0) scale(.93)} to{transform:translate(70px,-95px) scale(1.22)} }
@@ -302,16 +294,16 @@
       transition: transform .3s var(--ease), box-shadow .3s var(--ease);
     }
     .btn--primary {
-      background: linear-gradient(135deg, #ff9a00, #ff4500);
+      background: linear-gradient(135deg, #2ec4b6, #1a936f);
       color: #fff;
-      box-shadow: 0 4px 20px rgba(247,127,0,.35), inset 0 1px 0 rgba(255,255,255,.2);
+      box-shadow: 0 4px 20px rgba(46,196,182,.30), inset 0 1px 0 rgba(255,255,255,.2);
     }
     .btn--primary::before {
       content: ''; position: absolute; inset: 0; border-radius: 50px;
       background: linear-gradient(135deg, rgba(255,255,255,.18), transparent);
       opacity: 0; transition: opacity .3s;
     }
-    .btn--primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 48px rgba(247,127,0,.5), 0 0 0 1px rgba(255,154,0,.4); }
+    .btn--primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 48px rgba(46,196,182,.4), 0 0 0 1px rgba(46,196,182,.35); }
     .btn--primary:hover::before { opacity: 1; }
 
     .btn--secondary {
@@ -347,7 +339,7 @@
     #skills { padding-top: 50px; }
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
     }
     .skill-card {
@@ -371,9 +363,10 @@
       background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.04), transparent 70%);
       opacity: 0; transition: opacity .3s;
     }
-    .skill-card:hover { transform: translateY(-4px); border-color: var(--card-accent); box-shadow: 0 12px 32px rgba(0,0,0,.5), 0 0 0 1px var(--card-accent) inset; }
-    .skill-card:hover::before { transform: scaleX(1); }
-    .skill-card:hover::after  { opacity: 1; }
+    .skill-card:hover {
+      border-color: var(--glass-border2);
+      background: var(--glass-bg2);
+    }
     .skill-card__icon {
       width: 42px; height: 42px; border-radius: 11px;
       display: flex; align-items: center; justify-content: center;
@@ -627,7 +620,7 @@
       .hero__cta { flex-direction: column; align-items: stretch; gap: 10px; }
       .hero__cta .btn { width: 100%; border-radius: 14px; padding: 16px 24px; font-size: 14px; }
 
-      .skills-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .skills-grid { grid-template-columns: 1fr; gap: 10px; }
       .skill-card { padding: 16px; gap: 12px; }
       .skill-card__icon { width: 36px; height: 36px; font-size: 17px; }
       .skill-card__name { font-size: 13px; }
@@ -682,7 +675,6 @@
 
   <div class="bg-wrap" aria-hidden="true">
     <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
     <div class="orb orb-4"></div>
   </div>
@@ -720,19 +712,7 @@
 
     <!-- Hero -->
     <section class="hero" id="hero">
-      <div class="hero__float" aria-hidden="true">
-        <div class="hero__node hero__node--1">⚡</div>
-        <div class="hero__node hero__node--2">🤖</div>
-        <div class="hero__node hero__node--3">⚛️</div>
-        <div class="hero__node hero__node--4">🌐</div>
-        <div class="hero__node hero__node--5">🔗</div>
-        <div class="hero__node hero__node--6">✦</div>
-        <svg style="position:absolute;inset:0;width:100%;height:100%" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M 7% 22% Q 28% 40%, 50% 50%" stroke="rgba(247,127,0,.10)"  stroke-width="1.5" fill="none" stroke-dasharray="6,4"/>
-          <path d="M 93% 27% Q 70% 40%, 50% 50%" stroke="rgba(79,156,249,.10)" stroke-width="1.5" fill="none" stroke-dasharray="6,4"/>
-          <path d="M 4% 58% Q 24% 55%, 50% 50%"  stroke="rgba(34,211,165,.08)" stroke-width="1.5" fill="none" stroke-dasharray="6,4"/>
-        </svg>
-      </div>
+
 
       <div class="hero__content">
         <div class="hero__glow" aria-hidden="true"></div>
@@ -741,9 +721,7 @@
           <span>Prottush</span><br/>Islam
         </h1>
         <p class="hero__role">
-          <span class="hero__role-bracket">{ </span>
           CS Student &middot; Web Developer &middot; AI Automation
-          <span class="hero__role-bracket"> }</span>
         </p>
         <p class="hero__desc">
           Computer Science student from Bangladesh &mdash; building modern web apps with React,
@@ -773,10 +751,7 @@
           <div class="skill-card__icon">🤖</div>
           <div><div class="skill-card__name">AI Automation</div><div class="skill-card__sub">Workflow Design</div></div>
         </div>
-        <div class="skill-card" style="--card-accent:#9b5de5">
-          <div class="skill-card__icon">✦</div>
-          <div><div class="skill-card__name">Prompt Eng.</div><div class="skill-card__sub">LLM Specialist</div></div>
-        </div>
+
       </div>
     </section>
 
@@ -1002,17 +977,17 @@
     (function() {
       const canvas = document.getElementById('starCanvas');
       const ctx = canvas.getContext('2d');
-      const COLORS = [[255,255,255],[247,200,150],[150,200,255],[200,255,230],[255,220,180]];
+      const COLORS = [[255,255,255],[247,200,150],[150,200,255]];
       let stars = [];
       function build() {
-        const n = Math.min(Math.floor((canvas.width*canvas.height)/7000),200);
+        const n = Math.min(Math.floor((canvas.width*canvas.height)/18000), 80);
         stars = Array.from({length:n},()=>({
           x:Math.random()*canvas.width, y:Math.random()*canvas.height,
-          r:Math.random()*1.3+0.3,
+          r:Math.random()*1.1+0.2,
           color:COLORS[Math.floor(Math.random()*COLORS.length)],
           phase:Math.random()*Math.PI*2,
-          speed:Math.random()*.004+.001,
-          minA:Math.random()*.08+.02, maxA:Math.random()*.5+.4
+          speed:Math.random()*.002+.0005,
+          minA:Math.random()*.05+.02, maxA:Math.random()*.35+.2
         }));
       }
       function resize() { canvas.width=window.innerWidth; canvas.height=window.innerHeight; build(); }
@@ -1023,13 +998,6 @@
           const t=(Math.sin(s.phase)+1)/2;
           const a=s.minA+t*(s.maxA-s.minA);
           const [r,g,b]=s.color;
-          if(s.r>1&&a>.45){
-            const grd=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*3.5);
-            grd.addColorStop(0,`rgba(${r},${g},${b},${(a*.28).toFixed(3)})`);
-            grd.addColorStop(1,`rgba(${r},${g},${b},0)`);
-            ctx.beginPath(); ctx.arc(s.x,s.y,s.r*3.5,0,Math.PI*2);
-            ctx.fillStyle=grd; ctx.fill();
-          }
           ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
           ctx.fillStyle=`rgba(${r},${g},${b},${a.toFixed(3)})`; ctx.fill();
         }
