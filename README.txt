@@ -1,13 +1,10 @@
 PROTTUSH ISLAM — PORTFOLIO
 
-Open index.html in a browser to view the website. Keep both CSS files in the same folder.
+Static portfolio: index.html, styles.css, script.js and assets/.
+Open index.html to view locally. No build or installation is required.
 
-To host elsewhere, upload the folder contents to any static website host.
+Production: https://prottushislam.vercel.app
+Vercel deploys updates from this repository. Keep all asset paths together.
 
-WEBSITE UPDATE
-
-Upload index.html, styles.css, and details.css to the root of your existing portfolio repository, replacing the files with the same names. Upload the contents of this folder, rather than the ZIP itself. No build step, installation, or account connection is required to view the website locally.
-
-This package contains the website only. It does not change your resume. The page now directs visitors to email, LinkedIn, and X.
-
-The 1M impressions milestone refers to the personal X account over seven days, not an employer campaign. Existing experience dates follow the supplied experience screenshot. Award entries are nominations. 2030 is the expected graduation year.
+The personal X milestone is 1M impressions in seven days. Award entries are nominations.
+The downloadable resume excludes the phone number. X profile: https://x.com/prottush0
