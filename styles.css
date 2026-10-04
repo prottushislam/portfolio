@@ -79,3 +79,12 @@
 .hero-footer{padding:20px 0;gap:16px}
 }
 @media(max-width:350px){.site-header{gap:8px;padding-left:18px;padding-right:18px}.site-header .brand-mark{font-size:1.4rem}.header-talk{padding:8px 10px;font-size:.75rem}.menu-button{font-size:.75rem}.hero-top .eyebrow{font-size:.5625rem}.hero-actions{gap:12px}.hero-actions .button{font-size:.8125rem;padding:12px 14px}.hero-actions .button-outline{padding:12px 0}.hero-panel{padding-left:18px;padding-right:18px}.hero-panel .milestone-body{gap:14px}.hero-panel .milestone-result{font-size:.9375rem}}
+
+/* Two-row header with directly accessible section links. */
+.site-header{display:grid;grid-template-columns:1fr auto;gap:22px 24px;padding-top:22px;padding-bottom:18px}
+.site-header .header-talk{margin-left:0}
+.site-header #navigation{grid-column:1/-1;display:flex;position:static;justify-content:center;align-items:center;gap:42px;padding:0;background:transparent;border:0;box-shadow:none;font-size:.9375rem}
+.site-header #navigation a{padding:8px 0;white-space:nowrap;color:var(--muted)}
+.site-header #navigation a:hover{color:var(--yellow)}
+@media(max-width:760px){.site-header{padding:16px 22px 14px;gap:17px 16px}.site-header #navigation{justify-content:space-between;gap:12px;font-size:.8125rem}.site-header #navigation a{padding:7px 0}}
+@media(max-width:350px){.site-header{padding-left:18px;padding-right:18px}.site-header #navigation{gap:8px;font-size:.75rem}}
