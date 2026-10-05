@@ -153,3 +153,18 @@
 .resume-card .button{font-size:.875rem}
 }
 @media(max-width:350px){.site-header{padding-left:18px;padding-right:18px}.hero-top .eyebrow{font-size:.5625rem}.hero h1{font-size:2.8rem}.hero-panel .milestone-value{font-size:4rem}.hero-panel .milestone-body{gap:12px}.hero-actions .button{font-size:.75rem}.resume-card{padding:20px}}
+
+/* Skills cards with a compact, readable hierarchy. */
+.capabilities{display:block}
+.capability-intro{max-width:620px;margin-bottom:30px}
+.capability-intro>p:last-child{max-width:520px;margin-top:18px}
+.skill-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border:0}
+.skill-list>div{display:flex;flex-direction:column;gap:0;padding:24px;border:1px solid #d5dfce;border-radius:12px;background:#edf2e7;min-width:0}
+.skill-list>div>span{display:grid;place-items:center;width:33px;height:33px;border-radius:8px;background:#dfe9d7;color:#315747;padding:0;margin-bottom:20px;font-size:.75rem}
+.skill-list h3{font-size:1.125rem;font-weight:700;line-height:1.3;margin:0 0 9px}
+.skill-list p{font-size:.9375rem;line-height:1.55;margin:0}
+.contact-actions{display:flex}
+.contact-actions .button{flex:1}
+.social-links{margin-top:18px}
+@media(max-width:760px){.skill-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.skill-list>div{padding:18px 15px}.skill-list>div>span{margin-bottom:16px}.skill-list h3{font-size:1rem}.skill-list p{font-size:.8125rem}.capability-intro{margin-bottom:25px}}
+@media(max-width:350px){.skill-list{grid-template-columns:1fr}.skill-list>div{padding:20px}.skill-list>div>span{margin-bottom:12px}}
